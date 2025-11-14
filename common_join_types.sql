@@ -45,16 +45,16 @@ SELECT
     film.film_id, film.title, category.name
 FROM
     film
-Left Join film_category on film.film_id = film_category.film_id
-Left Join category on film_category.category_id = category.category_id
+Inner Join film_category on film.film_id = film_category.film_id
+Inner Join category on film_category.category_id = category.category_id
 
 -- Find list of all actors with each film title that they appear in
 SELECT 
     actor.first_name, actor.last_name, film.title
 FROM
     actor
-Left Join film_actor on actor.actor_id = film_actor.actor_id
-Left Join film on film_actor.film_id = film.film_id
+Inner Join film_actor on actor.actor_id = film_actor.actor_id
+Inner Join film on film_actor.film_id = film.film_id
 
 -- Add multiple conditions
 -- retrieve all films that belong to the Horror category, showing their IDs, titles, and category name.
